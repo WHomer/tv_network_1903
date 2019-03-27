@@ -52,8 +52,15 @@ class NetworkTest < MiniTest::Test
   def test_it_returns_highest_paid_actors_name_of_all_shows
     @nbc.add_show(@knight_rider)
     @nbc.add_show(@parks_and_rec)
-    @nbc.highest_paid_actor
-    
+
     assert_equal "Amy Poehler", @nbc.highest_paid_actor
+  end
+
+  def test_it_returns_payroll
+    @nbc.add_show(@knight_rider)
+    @nbc.add_show(@parks_and_rec)
+    expected = {"David Hasselhoff" => 1600000, "William Daniels" => 1000000, "Amy Poehler" => 2000000, "Nick Offerman" => 1400000}
+
+    assert_equal expected, @nbc.payroll
   end
 end
