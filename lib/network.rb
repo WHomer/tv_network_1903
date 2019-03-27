@@ -17,6 +17,14 @@ class Network
     all_actors_of_network.max_by{|actor| actor.salary}.actor
   end
 
+  def payroll
+    payroll_hash = {}
+    all_actors_of_network.each do |actor|
+      payroll_hash[actor.actor] = actor.salary
+    end
+    payroll_hash
+  end
+
   def all_actors_of_network
     all_actors = []
     @shows.each do |show|
