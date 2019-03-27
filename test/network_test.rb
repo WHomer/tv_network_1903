@@ -60,7 +60,6 @@ class NetworkTest < MiniTest::Test
     @nbc.add_show(@knight_rider)
     @nbc.add_show(@parks_and_rec)
     expected = {"David Hasselhoff" => 1600000, "William Daniels" => 1000000, "Amy Poehler" => 2000000, "Nick Offerman" => 1400000}
-
     assert_equal expected, @nbc.payroll
   end
 end
